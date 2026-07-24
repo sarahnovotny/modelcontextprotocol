@@ -587,129 +587,20 @@ with MCP, see our documentation:
 If you build something you'd like to share with the community, you can submit it to the
 [MCP Registry](/registry/about).
 
-## AI Use Policy
+## AI Contributions
 
-AI tools are a normal part of how software gets written. Many of our contributors and maintainers
-work in AI-heavy environments, and tools like Claude Code, Cursor, GitHub Copilot, and others are
-a regular part of their workflow. We use them too. **This policy is not anti-AI.**
+We welcome the use of AI tools like Claude or ChatGPT to help with your contributions! If you do
+use AI assistance, just let us know in your pull request or issue - a quick note about how you
+used it (drafting docs, generating code, brainstorming, etc.) is all we need.
 
-What we care about is _signal_ — giving reviewers the context they need to review your work well.
+The key is that you understand and can stand behind your contribution:
 
-### Why disclosure matters
+- **You get it** - You understand what the changes do and can explain them
+- **You know why** - You can articulate why the change is needed
+- **You've verified it** - You've tested or validated that it works as intended
 
-A PR where AI drafted the initial implementation and the contributor revised it carefully needs a
-different kind of review than one where a contributor used AI to explore the codebase but wrote
-the code themselves. Both are welcome. But they're reviewed differently.
-
-Good disclosure is a courtesy to the humans reviewing your work. It tells them where to focus
-their attention, which means you get faster, more useful feedback. When disclosure is missing,
-reviewers can't calibrate — and PRs without it may be deprioritized or closed.
-
-### What to disclose
-
-Tell us in your pull request description:
-
-- **Which tool(s)** you used (e.g., Claude Code, Cursor, GitHub Copilot, ChatGPT)
-- **The scope** of AI involvement — was it autocomplete? Drafting? Full implementation?
-- **A transcript or session link** if you have one (optional but appreciated)
-
-If your PR comments or responses to reviewer feedback are AI-generated, disclose that as well.
-
-<Note>
-  You don't need to disclose trivial autocomplete (single-line completions,
-  obvious variable names), spell check, grammar tools, or linters.
-</Note>
-
-Here are some examples of good disclosure, from minimal to thorough:
-
-**Minimal** (acceptable):
-
-> AI assistance: Used Claude Code to draft the initial implementation. Reviewed and revised
-> manually.
-
-**Better:**
-
-> AI assistance: Used Cursor to understand the existing auth flow. Implemented the change manually
-> based on that understanding. AI did not write any of the final code.
-
-**Best:**
-
-> AI assistance: Used Claude Code throughout — see linked session transcript. I reviewed all
-> suggestions, rejected two approaches that didn't fit the protocol semantics, and wrote the tests
-> without AI assistance. Happy to walk through any part of the implementation.
-
-### What is expected of you
-
-The core expectation hasn't changed: **you must understand and be able to stand behind your
-contribution.** Specifically:
-
-- **You get it** — you understand what the changes do and can explain them to a reviewer
-- **You know why** — you can articulate why the change is needed and how it fits MCP's goals
-- **You've verified it** — you've tested or validated that it works as intended
-
-If you cannot answer a reviewer's question about your contribution without going back to an AI
-tool, the contribution isn't ready to submit.
-
-### What is not permitted
-
-- Submitting AI-generated content without disclosing it
-- Using AI to generate large volumes of speculative contributions ("shotgun PRs") hoping some
-  will be accepted
-- Submitting AI-generated media: images, diagrams, audio, or video in any form
-- Using AI to generate responses to reviewer feedback that you have not read or understood
-
-### How reviewers use this signal
-
-Reviewers have limited time. Disclosure helps them decide how to spend it effectively:
-
-- **Active community members** who have built context through issue discussion, Discord
-  participation, or prior contributions give reviewers more signal to work with. Their disclosure
-  can be lighter because there's an existing relationship.
-- **First-time contributors** or contributions that arrive without prior engagement need more
-  context for reviewers to assess. Thorough disclosure, a linked issue, or participation in a
-  relevant Discussion thread all help reviewers understand your work quickly.
-
-This isn't about trust levels — it's about the practical reality that reviewers calibrate based on
-available signal. The more context you provide, the faster and better your review will be.
-
-<Note>
-  If you're new to MCP, the best way to build context is to engage before you
-  code: participate in a GitHub Discussion, ask questions in a [Working
-  Group](/community/working-interest-groups) Discord channel, or start with a
-  smaller, well-scoped contribution. A maintainer or active community member who
-  has seen your work can also vouch for your contribution to help it get
-  reviewed — see [PR Review Process](/community/pr-review-process) for details.
-</Note>
-
-### A note to early-career contributors
-
-If you're early in your career and using AI to learn — we see you, and we want to help. The best
-thing you can do is be honest about your process, do your best work, and ask questions in Discord.
-We will review your real work with genuine care and give you feedback that actually helps you grow.
-
-Getting a contribution accepted into a protocol that powers real AI systems in production is
-something to be proud of. Make sure the work is yours to be proud of.
-
-### Consequences of policy violation
-
-Our goal is always to help contributors understand the path forward, not to discourage
-participation. That said, disclosure is not optional:
-
-- **First occurrence** — we'll let you know about this policy and ask you to update your PR
-- **Repeated violations** — PRs may be closed without detailed feedback
-- **Persistent pattern** — future contributions may require additional scrutiny at maintainer
-  discretion
-
-You can also read the
-[contribution guidelines in the repository](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md#ai-contributions)
-for the canonical policy.
-
-<Note>
-  This policy draws inspiration from the AI Use Policy developed by the [Ghostty
-  project](https://github.com/ghostty-org/ghostty), which encountered similar
-  pressures and developed a principled, community-respecting response. We are
-  grateful for their public work on this problem.
-</Note>
+You can read the full policy in
+[AI_POLICY.md](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/AI_POLICY.md).
 
 ## Code of Conduct
 
