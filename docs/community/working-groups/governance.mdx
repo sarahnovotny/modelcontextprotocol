@@ -46,6 +46,22 @@ The Governance Working Group exists to refine, document, and steward MCP's gover
 
 Sponsored by David Soria Parra ([@dsp-ant](https://github.com/dsp-ant)).
 
+### Lead Selection & Succession
+
+The current Lead serves an interim term of no more than one year from charter approval. When a
+Lead seat opens — the interim term ends, a Lead steps down, or the WG agrees to add a seat — the
+WG selects future Leads as follows:
+
+- Any WG Member may self-nominate or be nominated by another WG Member.
+- Candidates must meet the Lead requirements in the
+  [Working and Interest Groups](/community/working-interest-groups) documentation, and the group's
+  leadership must retain sponsorship from at least two Core Maintainers or one Lead Maintainer.
+- Selection is by WG consensus using the standard decision-making process (lazy consensus, falling
+  back to a formal vote), then ratified by Core Maintainers as a charter amendment, since the
+  Leadership table is part of this charter.
+- The org-diversity invariant (no more than 2 Leads from any single organisation; see Membership)
+  is enforced at selection time.
+
 ## Authority & Decision Rights
 
 | Decision Type                                                                       | Authority Level                                                    |
@@ -61,13 +77,14 @@ Sponsored by David Soria Parra ([@dsp-ant](https://github.com/dsp-ant)).
 | Onboarding & mentorship culture and practice docs                                   | WG consensus (autonomous)                                          |
 | Surfacing community concerns to Core Maintainers                                    | WG consensus (advisory; non-binding)                               |
 | Scope expansion                                                                     | Core Maintainer approval required                                  |
+| Amendments to this charter                                                          | WG consensus → Core Maintainer approval                            |
 | WG Member approval                                                                  | WG Member sponsors (subject to org-diversity cap; see Membership)  |
 
 The "editorial vs. substantive" line is intentionally narrow: typos, clarifications, broken-link fixes, and rewordings that do not change meaning are editorial. Anything that changes the meaning, scope, or applicability of an existing rule is substantive.
 
 ## Membership
 
-Membership eligibility follows the standard WG sponsor-approval model defined in the [Working and Interest Groups](/community/working-interest-groups) documentation, with one additional structural rule: **no more than 2 Leads from any single organisation**. This invariant is maintained throughout each term.
+Membership eligibility follows the standard WG model defined in the [Working and Interest Groups](/community/working-interest-groups) documentation. To become a WG Member: sustained participation over 3 months, meaningful contributions (for this WG: governance doc drafting, reviews, or discussion facilitation), nomination by an existing WG Member or Lead, and no objections from Leads, Core Maintainers, or Lead Maintainers within 7 days. One additional structural rule applies: **no more than 2 Leads from any single organisation**. This invariant is maintained throughout each term.
 
 | Name               | Organization                     | GitHub                                           | Discord       | Level     |
 | ------------------ | -------------------------------- | ------------------------------------------------ | ------------- | --------- |
@@ -81,6 +98,11 @@ Membership eligibility follows the standard WG sponsor-approval model defined in
 | --------------- | --------- | -------- | ------------------------------------------------------------------- |
 | Working Session | Monthly   | 60 min   | Doc work, member coordination, scheduled deliberation               |
 | Office Hours    | Quarterly | 60 min   | Open Q&A; surface community concerns; voice-channel inbound surface |
+
+Monthly working sessions are agenda-driven: if no agenda items have been proposed by 48 hours
+before a scheduled session, the Leads cancel it and announce the cancellation in `#governance-wg`.
+Quarterly office hours are held regardless, since they are the open inbound surface and do not
+require a pre-set agenda.
 
 Discord: `#governance-wg`
 
@@ -103,7 +125,7 @@ GitHub Discussions: `Meeting Notes - Governance WG` (category to be created duri
 **By end of 2026 Q4 (six months):**
 
 - All five v0.1 deliverables landed in `docs/community/` (with the State-of-MCP-Community item published as a blog post plus a cadence doc).
-- "Meeting Notes - Governance WG" Discussions category live; meeting notes posted from every monthly working session.
+- "Meeting Notes - Governance WG" Discussions category live; meeting notes posted from every monthly working session that is held.
 - At least 3 substantive community comments received on the values doc draft before it lands as canonical.
 - Org-diversity invariant maintained throughout the term: no more than 2 Leads from any single organisation.
 
@@ -119,6 +141,17 @@ GitHub Discussions: `Meeting Notes - Governance WG` (category to be created duri
 - Aggregated, anonymised Code of Conduct trend report received from the formalised CoC handling body, informing policy revision.
 
 These criteria are deliberately conservative for v0.1 and may be revised as the group coalesces; revisions are tracked in the Changelog below.
+
+## Charter Updates
+
+This charter is a v0.1 document and is expected to be revised as the group coalesces. Updates
+follow the
+[Charter Amendments](/community/working-interest-groups#charter-amendments) process defined for
+all groups: proposal by a Lead or Core Maintainer, approval by Core Maintainers. Within the WG,
+amendment proposals are treated like any other substantive governance change — WG consensus
+first, then Core Maintainer approval. Editorial fixes (typos, broken links, rewordings that do
+not change meaning) may land autonomously per the editorial/substantive distinction above. All
+amendments are recorded in the Changelog below.
 
 ## Changelog
 
