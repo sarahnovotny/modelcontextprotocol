@@ -1,0 +1,259 @@
+---
+title: PR Review Process
+description: How MCP reviews pull requests, including the vouch system and standard closure reasons
+---
+
+Reviewer bandwidth is one of the most limited resources in MCP. This page describes how
+maintainers and Working Group Leads triage, review, and close pull requests — and how
+contributors can help their PRs get reviewed efficiently.
+
+<Note>
+  This page is primarily a reference for maintainers and reviewers, but
+  understanding these processes helps contributors set the right expectations
+  and navigate the project effectively.
+</Note>
+
+## The Vouch System
+
+Open source has always operated on a foundation of trust. For most of its history, the effort
+required to understand a codebase, implement a meaningful change, and submit a PR was itself a
+signal — it naturally indicated that the contributor had engaged with the project deeply enough
+to contribute meaningfully. That signal is less reliable than it used to be.
+
+MCP is a protocol that underpins agentic AI systems. The quality and security implications of
+changes are significant, and the reviewer pool is finite. The vouch system is a lightweight
+social signal layer that gives community members a way to indicate genuine confidence in a
+contributor or a specific piece of work — helping reviewers prioritize where to spend their time.
+
+### What is a vouch?
+
+A vouch is a named, public statement of confidence from an active community member that a
+contributor or a specific contribution is worth a maintainer's review time. It is not an
+approval — it is a request for prioritized attention, backed by the voucher's reputation.
+
+A vouch says: _"I have read this contribution / I know this contributor's work. I believe this is
+worth your time."_
+
+### Who can vouch?
+
+- **Core Maintainers** — always
+- **Working Group Leads** — for contributions within their WG's scope
+- **Active community contributors** — those with a meaningful contribution history in this
+  repository (merged PRs, accepted SEP participation, sustained issue engagement)
+
+<Note>
+  "Active" is a judgment call, not a hard threshold. New contributors cannot
+  vouch for other new contributors. When in doubt, ask a WG Lead or maintainer
+  to vouch instead.
+</Note>
+
+### How to vouch
+
+To vouch for a pull request, comment on it with `/vouch` followed by a brief note explaining the
+basis for your vouch:
+
+```
+/vouch — I've been working with @contributor on this in the auth WG for three weeks.
+They understand the protocol deeply and this implementation matches the accepted SEP.
+```
+
+```
+/vouch — I reviewed this change carefully. It's a narrow fix for a well-documented
+issue and the tests are solid.
+```
+
+```
+/vouch — @contributor is a regular in the Discord spec discussions and has reviewed
+a dozen SEPs. Their judgment is sound.
+```
+
+<Warning>
+  A vouch is a reputational commitment. Vouching for low-quality work reflects
+  on the voucher. If you haven't read the contribution or don't know the
+  contributor's work, do not vouch.
+</Warning>
+
+### What a vouch does (and doesn't do)
+
+- A vouch moves a PR into the review queue for the relevant maintainer or WG Lead
+- A vouch does **not** guarantee the PR will be merged — it guarantees it will be reviewed
+- A vouch does **not** transfer responsibility for code quality from the contributor to the
+  voucher
+- A vouch does **not** bypass the SEP requirement for spec-level changes
+- Multiple vouches from active contributors can compensate for a single voucher who is less
+  well-known
+
+### Getting a vouch as a new contributor
+
+The vouch system is not a wall — it is a door. If you're an active community member and you
+encounter a new contributor making a genuine, well-considered contribution, vouching for them is
+one of the best things you can do for the project.
+
+If you're a new contributor and don't yet have a vouch:
+
+- Engage in the relevant GitHub Discussion or Discord thread before submitting a PR
+- Ask in the relevant [Working Group](/community/working-interest-groups) Discord channel if
+  anyone is willing to review your proposal first
+- Start with smaller, well-scoped contributions that are easier to vouch for
+- A WG Lead can always grant a vouch for a contribution they have personally reviewed
+
+<Note>
+  This system draws inspiration from the vouch model introduced by the [Ghostty
+  project](https://github.com/ghostty-org/ghostty). Credit to Mitchell Hashimoto
+  and the Ghostty maintainers for working this out in public.
+</Note>
+
+### Denouncement
+
+Vouching implies the inverse: community members may also publicly note that a contributor has
+submitted low-quality, misleading, or policy-violating work. This is a last resort, not a first
+response — close the PR, explain why, and give the contributor a chance to correct course.
+
+Repeated violations, particularly undisclosed AI-generated content or bad-faith contributions, may
+result in a maintainer note that future PRs from that contributor require additional scrutiny.
+
+<Warning>
+  Denouncement is for protecting maintainer time and community trust — not for
+  disagreements about technical direction. Technical disagreements are resolved
+  through the [SEP process](/community/sep-guidelines) and [governance
+  mechanisms](/community/governance).
+</Warning>
+
+## PR Closure Reasons
+
+Closing a PR promptly and clearly — rather than leaving it to languish — respects both the
+contributor's time and the maintainers'. A clear closure comment is not a rejection of the person;
+it is a signal of respect and an invitation to re-engage correctly.
+
+<Note>
+  Closing a PR is not the end of the conversation. It is an invitation to start
+  the right conversation. The goal is always to help contributors understand the
+  path forward, not to discourage participation.
+</Note>
+
+The sections below provide standard closure reasons and suggested comment templates. Maintainers
+and WG Leads should adapt the bracketed placeholders to the specific PR. Every closing comment
+should:
+
+- Name the specific reason (not just apply a label)
+- Acknowledge the effort if it was genuine
+- Explain what the contributor can do to reopen or re-engage
+- Be written _to_ the contributor, not _about_ them
+
+<Note>
+  These are templates, not scripts. Adapt them to the specific PR. A sentence of
+  genuine acknowledgment goes a long way — contributors are people, and they
+  notice when a response is copied verbatim.
+</Note>
+
+### No linked issue or accepted proposal
+
+**Labels:** `wontfix` / `needs-issue`
+
+> Thanks for opening this PR. We require that all changes — whether new features, significant
+> refactors, or spec-adjacent work — are discussed and accepted in a GitHub issue or Discussion
+> before implementation begins. This helps us avoid duplicated effort, align on direction early,
+> and give reviewers the context they need. Please open an issue first, and once it's triaged and
+> accepted by a maintainer, you're welcome to link it here and reopen.
+
+### No vouch from a community member
+
+**Labels:** `needs-vouch`
+
+> This PR is from a contributor we don't yet have context on, and it hasn't received a vouch from
+> an active community member or maintainer. Our vouch system exists because reviewer bandwidth is
+> limited and trust is earned through participation. If you're an active community member who can
+> vouch for the contributor or the work, please comment with `/vouch` and a brief note on why
+> you're confident this contribution is worth review. See the
+> [Vouch System](/community/pr-review-process#the-vouch-system) for details.
+
+### No prior engagement
+
+**Labels:** `needs-context`
+
+> This PR arrived without prior conversation — no linked issue, no Discussion thread, and no
+> indication of familiarity with MCP's design principles or community. We appreciate the interest,
+> but reviewing context-free PRs is a significant time investment for a volunteer and
+> corp-seconded team. Please start by engaging in a relevant issue or Discussion, and come back
+> with a linked proposal once there's shared context.
+
+### Out of scope for this repository
+
+**Labels:** `out-of-scope`
+
+> The change proposed here falls outside the scope of this repository. \[Add specific guidance:
+> e.g., SDK changes belong in the relevant SDK repo; spec extension proposals should follow the
+> SEP process.\] Please open this in the right place — see
+> [Contributing](/community/contributing#types-of-contributions) for guidance.
+
+### Spec-level change without a SEP
+
+**Labels:** `needs-sep`
+
+> This PR touches the protocol spec directly but doesn't have a corresponding Spec Enhancement
+> Proposal (SEP) that has been sponsored and approved. Protocol changes require a SEP because they
+> affect all SDK implementations and must be deliberated by the Core Maintainers group. Please
+> open a SEP first — see the [SEP Guidelines](/community/sep-guidelines). Once your SEP is
+> accepted, we'll be glad to review the corresponding implementation PR.
+
+### SEP not yet approved
+
+**Labels:** `sep-pending`
+
+> Thanks for linking the SEP — we can see the proposal is still in review. We appreciate getting
+> ahead of the implementation, but we ask that PRs implementing spec changes wait until the
+> corresponding SEP is formally approved. This avoids churn if the proposal changes during review.
+> Please keep this PR as a draft and unmark it for review once the SEP is approved. We'll reach
+> out when it's time.
+
+### Stale / no contributor response
+
+**Labels:** `stale`
+
+> This PR has been open for \[N weeks/months\] without a response to reviewer feedback or
+> requested changes. We're closing it to keep our backlog manageable, but the work isn't lost —
+> the branch and conversation remain. If you'd like to continue, please address the open feedback
+> and reopen or create a new PR with a summary of what changed. Thank you for the contribution.
+
+### AI-generated without disclosure
+
+**Labels:** `ai-undisclosed` / `low-quality`
+
+> This PR shows signs of AI-generated content that has not been disclosed per our
+> [AI Use Policy](/community/contributing#ai-use-policy). All AI assistance must be disclosed in
+> the PR description. Additionally, this contribution does not appear to have been reviewed or
+> understood by the author — \[specific examples: test coverage is missing, the change breaks
+> existing behavior, the PR description doesn't explain what the change does or why\]. We're
+> closing this PR. Please read the AI Use Policy, ensure you understand the code you're
+> contributing, and resubmit with proper disclosure.
+
+### Duplicate of existing work
+
+**Labels:** `duplicate`
+
+> Thanks for the contribution. This covers the same ground as \[link to existing issue / PR /
+> SEP\]. We're closing this to avoid duplicated review effort. Please follow the linked thread for
+> the latest status, and feel free to add your perspective there if you have something new to
+> contribute.
+
+### Good faith contribution — not the right direction
+
+**Labels:** `wontfix` / `by-design`
+
+> Thank you — this is a well-crafted PR and we appreciate the effort. After discussion, we've
+> decided not to merge it because \[specific reason: e.g., it conflicts with a design principle, it
+> optimizes for a use case we're intentionally not prioritizing, it duplicates capability we expect
+> to handle differently\]. This isn't a reflection on the quality of the work. We'll add a note to
+> the linked issue so the decision is on the record. Thank you for engaging with the project.
+
+## PR Closure Checklist
+
+Before closing a PR, confirm:
+
+- Have you left a comment explaining why? (Required — a label alone is not sufficient)
+- Have you given the contributor a clear next step?
+- If the PR was substantive but misdirected, have you linked the right channel or process?
+- If AI-related, have you referenced the
+  [AI Use Policy](/community/contributing#ai-use-policy)?
+- If this involves a governance or spec-level question, is the decision logged in the decision
+  record?
